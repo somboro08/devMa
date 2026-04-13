@@ -1,4 +1,4 @@
-// lib/core/constants/app_constants.dart
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 class AppConstants {
   AppConstants._();
@@ -9,12 +9,12 @@ class AppConstants {
   static const String appVersion = '1.0.0';
 
   // Supabase — remplace par tes vraies clés
-static const String supabaseUrl = 'https://awvqyuulswppyrldcdwk.supabase.co';
-static const String supabaseAnonKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImF3dnF5dXVsc3dwcHlybGRjZHdrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzYwMjM1NDEsImV4cCI6MjA5MTU5OTU0MX0.IqhgKg04yI-nOwyspeiWe89a1sEkLN-0pTwXqVGAXQM';
+  static final String supabaseUrl = dotenv.env['SUPABASE_URL']!;
+  static final String supabaseAnonKey = dotenv.env['SUPABASE_ANON_KEY']!;
 
 
   // Gemini API — remplace par ta vraie clé
-static const String geminiApiKey = 'AIzaSyBsaPH1sC_YcWN7oneGJW_j9H_WthRw4jI';
+  static final String geminiApiKey = dotenv.env['GEMINI_API_KEY']!;
   static const String geminiModel = 'gemini-2.5-flash';
   static const String geminiApiUrl =
       'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent';
